@@ -2,12 +2,14 @@
 
 ## Junit
 
-### expected
+### Testing Exceptions 
+
 ```java
 @Test(expected= IndexOutOfBoundsException.class) public void empty() { 
     new ArrayList<Object>().get(0); 
 }
 ```
+
 ## Hamcrest
 
 ### check if single element is in a collection
@@ -74,9 +76,22 @@ List<Integer> collection = Lists.newArrayList(15, 20, 25, 30);
 assertThat(collection, everyItem(greaterThan(10)));
 ```
 ## Mockito
+```
+@Mock
+```  
 
+```
+@Spy
+```  
+
+```
+@Spy
+```  
 ## Spring 
 ```
 @MockBean
+```  
+```
+@SpyBean
 ```  
   
