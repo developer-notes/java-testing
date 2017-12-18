@@ -9,6 +9,37 @@
     new ArrayList<Object>().get(0); 
 }
 ```
+### Parameterized Test
+Define this on top of the class 
+```java
+@RunWith(value = Parameterized.class)
+```
+#### Parameterized via Constructor
+```java
+//default value = 0
+    @Parameter(value = 0)
+    public int numberA;
+    
+      @Parameters(name = "{index}: testAdd({0}+{1}) = {2}")//name is optional
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{
+                {1, 1, 2},
+                {2, 2, 4},
+                {8, 2, 10},
+                {4, 5, 9},
+                {5, 5, 10}
+        });
+    }
+
+    @Test
+    public void test_addTwoNumbes() {
+        assertThat(MathUtils.add(numberA, numberB), is(expected));
+    }
+ ```
+#### Parameterized via Field Injection
+```java
+
+```
 
 ## Hamcrest
 
